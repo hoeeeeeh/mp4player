@@ -1,0 +1,19 @@
+name: Kompose Convert on Main Branch
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  kompose-convert:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    # Add additional steps here to deploy the generated Kubernetes resources.
+    - name: CI Completed
+      run:  |
+        curl -H "Content-Type: application/json" -d '{ "repositoryName": "mp4player", "githubUsername": "hoeeeeeh"}' -X POST http://54.180.150.131/github/action-completed
