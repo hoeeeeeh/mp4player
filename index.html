@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>영상 플레이어</title>
+</head>
+<body>
+    <video id="videoPlayer" width="640" height="360" controls>
+        <source src="video.mp4" type="video/mp4">
+        <!-- 다양한 비디오 포맷에 대한 소스를 제공할 수 있습니다 -->
+    </video>
+
+    <script>
+        // 비디오 엘리먼트 가져오기
+        var video = document.getElementById('videoPlayer');
+
+        // 비디오가 로딩되면 재생
+        video.addEventListener('loadeddata', function() {
+            video.play();
+        });
+
+        // 비디오 컨트롤을 추가할 수 있습니다.
+        // 예를 들어, 재생/일시정지 버튼, 음소 조절, 타임라인 표시, 등등
+
+        // 예를 들어, 재생/일시정지 버튼을 만들고 클릭 이벤트를 처리할 수 있습니다.
+        var playPauseButton = document.createElement('button');
+        playPauseButton.textContent = '재생/일시정지';
+
+        playPauseButton.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                playPauseButton.textContent = '일시정지';
+            } else {
+                video.pause();
+                playPauseButton.textContent = '재생';
+            }
+        });
+
+        document.body.appendChild(playPauseButton);
+    </script>
+</body>
+</html>
+
