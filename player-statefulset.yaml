@@ -23,7 +23,7 @@ spec:
         io.kompose.service: player
     spec:
       containers:
-        - image: kuploy/videoplayer:latest
+        - image: kuploy/videoplayer:1.0.0
           name: player
           ports:
             - containerPort: 80
