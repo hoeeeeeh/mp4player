@@ -10,7 +10,6 @@ metadata:
   name: player
   namespace: hoeeeeeh
 spec:
-  clusterIP: None
   ports:
     - name: "80"
       port: 80
@@ -18,5 +17,3 @@ spec:
   selector:
     io.kompose.service: player
   type: ClusterIP
-status:
-  loadBalancer: {}
